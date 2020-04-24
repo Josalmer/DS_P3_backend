@@ -1,0 +1,38 @@
+version: '3.1'
+services:
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password --port 4306
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ''
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_USER: 'root'
+    ports:
+      - "4306:4306"
+
+  web:
+    build: .
+    environment:
+      DATABASE_USERNAME: 'root'
+      DATABASE_PORT: '4306'
+      DATABASE_HOST: 'db'
+      LC_ALL: 'C.UTF-8'
+      LANG: 'en_US.UTF-8'
+      LANGUAGE: 'en_US.UTF-8'
+    command: bash -c "rm -f tmp/pids/server.pid && rails s -b 0.0.0.0"
+    volumes:
+      - gems:/usr/local/bundle:delegated
+      - ~/.ssh/:/root/.ssh  #for deploy enter bash and run "eval $(ssh-agent -s)" and "ssh-add"
+      - .:/ds_p3_backend
+    ports:
+      - "3000:3000"
+      - "26166:26166"
+      - "1234:1234"
+    depends_on:
+      - db
+
+volumes:
+  db: {}
+  gems: {}
