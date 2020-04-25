@@ -2,6 +2,8 @@ es:
   activerecord:
     models:
       user: Usuarios
+      category: Categorias
+      product: Productos
     attributes:
       user:
         name: Nombre
@@ -10,6 +12,15 @@ es:
         created_at: Creado el
         updated_at: Actualizado el
         attached_file: Archivo adjunto
+      category:
+        name: Nombre
+        products: Productos
+        attached_file: Imagen
+      product:
+        name: Nombre
+        description: Descripción
+        price: Precio
+        category: Categoría
     errors:
       messages:
         record_invalid: 'La validación falló: %{errors}'

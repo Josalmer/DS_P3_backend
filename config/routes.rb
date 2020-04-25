@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       devise_for :users, defaults: { format: :json }
       resource :user_profile, only: %i[show update]
+      resources :products, only: %i[show index]
+      resources :categories, only: %i[show index]
     end
   end
 end

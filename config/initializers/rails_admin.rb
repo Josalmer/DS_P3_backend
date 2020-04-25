@@ -3,7 +3,7 @@
 RailsAdmin.config do |config|
   ### Popular gems integration
 
-  config.main_app_name = ['Rails Backend', 'Administración']
+  config.main_app_name = ['Saldana&Plata Supplies', 'Administración']
 
   ## == Devise ==
   config.authenticate_with do
