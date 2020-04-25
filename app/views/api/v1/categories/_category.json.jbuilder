@@ -2,4 +2,4 @@
 
 json.id category.id
 json.name category.name
-json.image category.attached_file
+json.image category.image

@@ -9,7 +9,7 @@ class Category < ApplicationRecord
     name
   end
 
-  def logo
-    file_url.nil? ? default_logo : file_url
+  def image
+    file_url.nil? ? default_image : file_url
   end
 end

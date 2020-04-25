@@ -26,8 +26,8 @@ module Attachable
     attached_file&.attachment && attached_file&.filename&.to_s
   end
 
-  def default_logo
-    ActionController::Base.helpers.image_url('logo.png')
+  def default_image
+    ActionController::Base.helpers.image_url('category.png')
   end
 
   def resize_image(image)
