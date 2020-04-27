@@ -2,7 +2,8 @@
 
 class Api::V1::CategoriesController < Api::BaseController
   def show
-    @category = Category.find(id_param)
+    id=id_param['id']
+    @category = Category.find(id)
   end
 
   def index
