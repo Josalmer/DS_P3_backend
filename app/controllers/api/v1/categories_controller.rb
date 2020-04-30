@@ -2,7 +2,7 @@
 
 class Api::V1::CategoriesController < Api::BaseController
   def show
-    id=id_param['id']
+    id = id_param['id']
     @category = Category.find(id)
   end
 

@@ -13,6 +13,15 @@ Rails.application.routes.draw do
       resource :user_profile, only: %i[show update]
       resources :products, only: %i[show index]
       resources :categories, only: %i[show index]
+      resource :shopping_baskets, only: %i[show]
+      patch 'buy_all_shopping_basket_products' => 'shopping_baskets#buy'
+      patch 'add_product_to_current_user_shopping_basket' => 'shopping_baskets#add'
+      patch 'remove_product_to_current_user_shopping_basket' => 'shopping_baskets#remove'
     end
   end
 end
+
+# get_current_user_shopping_basket
+# add_product_to_current_user_shopping_basket
+# remove_product_to_current_user_shopping_basket
+# buy_all_shopping_basket_products

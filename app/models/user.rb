@@ -14,7 +14,15 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true,
                     format: { with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]{2,4}$\z/i }
 
+  after_create :create_user_shopping_basket
+
   def to_s
     email
+  end
+
+  def create_user_shopping_basket
+    basket = ShoppingBasket.new
+    basket.user = self
+    basket.save
   end
 end
