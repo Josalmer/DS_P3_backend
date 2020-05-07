@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Api::V1::UserProfilesController < Api::BaseController
+class Api::V1::ShoppingBasketsController < Api::BaseController
   before_action :load_user_basket
 
   def show; end
