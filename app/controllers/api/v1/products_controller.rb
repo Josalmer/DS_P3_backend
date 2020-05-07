@@ -2,7 +2,8 @@
 
 class Api::V1::ProductsController < Api::BaseController
   def show
-    @product = Product.find(id_param)
+    id = id_param['id']
+    @product = Product.find(id)
   end
 
   def index
