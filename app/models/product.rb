@@ -12,4 +12,13 @@ class Product < ApplicationRecord
   def to_s
     name
   end
+
+  def belongs_to_user_shopping_basket(user)
+    basket = ShoppingBasket.by_user(user.id).first
+    if basket
+      basket.products.include?(self)
+    else
+      false
+    end
+  end
 end
