@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       resource :shopping_baskets, only: %i[show]
       patch 'buy_all_shopping_basket_products' => 'shopping_baskets#buy'
       patch 'add_product_to_current_user_shopping_basket' => 'shopping_baskets#add'
-      patch 'remove_product_to_current_user_shopping_basket' => 'shopping_baskets#remove'
+      patch 'remove_product_from_current_user_shopping_basket' => 'shopping_baskets#remove'
     end
   end
 end
