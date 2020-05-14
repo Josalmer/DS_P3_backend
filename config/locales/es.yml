@@ -4,6 +4,8 @@ es:
       user: Usuarios
       category: Categorias
       product: Productos
+      cash_added: Recargas de usuario
+      shopping_basket: Cesta de la compra
     attributes:
       user:
         name: Nombre
@@ -16,11 +18,25 @@ es:
         name: Nombre
         products: Productos
         attached_file: Imagen
+        created_at: Creado el
+        updated_at: Actualizado el
       product:
         name: Nombre
         description: Descripción
         price: Precio
         category: Categoría
+        created_at: Creado el
+        updated_at: Actualizado el
+      shopping_basket:
+        user: Usuario
+        products: Productos
+        created_at: Creado el
+        updated_at: Actualizado el
+      cash_added:
+        user: Usuario
+        charge: Recarga
+        created_at: Creado el
+        updated_at: Actualizado el
     errors:
       messages:
         record_invalid: 'La validación falló: %{errors}'

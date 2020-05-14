@@ -51,12 +51,20 @@ RailsAdmin.config do |config|
   config.actions do
     dashboard # mandatory
     index # mandatory
-    new
+    new do
+      except ['CashAdded']
+    end
     export
-    bulk_delete
+    bulk_delete do
+      except ['CashAdded']
+    end
     show
-    edit
-    delete
+    edit do
+      except ['CashAdded']
+    end
+    delete do
+      except ['CashAdded']
+    end
     show_in_app
 
     ## With an audit adapter, you can add:
