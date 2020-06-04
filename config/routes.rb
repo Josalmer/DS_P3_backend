@@ -21,8 +21,3 @@ Rails.application.routes.draw do
     end
   end
 end
-
-# get_current_user_shopping_basket
-# add_product_to_current_user_shopping_basket
-# remove_product_to_current_user_shopping_basket
-# buy_all_shopping_basket_products
